@@ -1,7 +1,11 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  margin: 0,
+  padding: 0
+ })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,6 +15,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <meta charset='utf-8' />
+        <title>Getting started with the Mapbox Directions API</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+      </head>
+
       <body className={inter.className}>{children}</body>
     </html>
   )
